@@ -1,0 +1,3145 @@
+/* ===================== PODSTRONA WSPÓŁPRACE ===================== */
+/* Ten plik jest dodatkiem do styles.css. Nie zmienia globalnie kolorów strony. */
+
+html:has(body.cooperation-page),
+html.snap-page:has(body.cooperation-page) {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  overscroll-behavior-y: auto !important;
+}
+
+body.cooperation-page {
+  background: #021F42;
+  color: white;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  caret-color: transparent;
+}
+
+body.cooperation-page *,
+body.cooperation-page *::before,
+body.cooperation-page *::after {
+  box-sizing: border-box;
+}
+
+body.cooperation-page .fade-page {
+  width: min(100%, 1520px);
+  margin: 0 auto;
+  padding: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(18px, 3svh, 38px))
+           clamp(18px, 4vw, 56px)
+           clamp(42px, 6vw, 90px);
+}
+
+.cooperation-main {
+  width: 100%;
+}
+
+.cooperation-header {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto clamp(34px, 5svh, 62px);
+}
+
+.cooperation-header h1 {
+  font-size: clamp(3rem, 6.2vw, 5rem);
+  line-height: 1.05;
+  margin: 0 0 clamp(14px, 2svh, 24px);
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.5);
+}
+
+.cooperation-header p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+  line-height: 1.55;
+  color: #cfdfff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.partners-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 42px);
+  align-items: stretch;
+}
+
+.partner-card {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+  gap: clamp(20px, 2.6vw, 34px);
+  align-items: center;
+  background: rgba(9, 45, 82, 0.82);
+  border-radius: clamp(22px, 2vw, 30px);
+  padding: clamp(22px, 3vw, 36px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.partner-logo-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 220px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #003d7a;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.partner-logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: clamp(14px, 2vw, 24px);
+  border-radius: inherit;
+}
+
+.partner-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.partner-type {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px 18px;
+  margin: 0 0 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cfdfff;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.partner-card h2 {
+  margin: 0 0 14px;
+  color: white;
+  font-size: clamp(1.65rem, 2.35vw, 2.35rem);
+  line-height: 1.15;
+  font-weight: 700;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+.partner-description {
+  margin: 0 0 18px;
+  color: white;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.55;
+}
+
+.partner-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 2px 0 22px;
+}
+
+.partner-info span {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 8px 13px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cfdfff;
+  font-size: clamp(0.88rem, 1vw, 0.98rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.partner-button {
+  margin-top: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  background: transparent;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.15;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+}
+
+.partner-button:hover {
+  background: #ffd700;
+  color: #021F42;
+  transform: translateY(-2px);
+}
+
+.partner-button:focus-visible {
+  outline: 3px solid rgba(255, 215, 0, 0.45);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1180px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 12px) + var(--nav-control-size, 54px) + 18px);
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .cooperation-header {
+    margin-bottom: 26px;
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .partner-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 22px 18px;
+  }
+
+  .partner-logo-box {
+    width: min(100%, 190px);
+    margin: 0 auto;
+  }
+
+  .partner-content {
+    align-items: center;
+  }
+
+  .partner-info {
+    justify-content: center;
+  }
+
+  .partner-button {
+    width: min(100%, 270px);
+  }
+}
+
+@media (max-width: 420px) {
+  .partner-card {
+    border-radius: 20px;
+  }
+
+  .partner-logo-box {
+    width: min(100%, 160px);
+  }
+}
+
+/* ===================== WSPÓŁPRACE — WERSJA JEDNOEKRANOWA ===================== */
+/* Usuwa duży opis pod tytułem i zagęszcza układ tak, aby na typowym ekranie desktopowym całość była widoczna bez przewijania. */
+body.cooperation-page {
+  min-height: 100svh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+body.cooperation-page .fade-page {
+  width: min(100%, 1740px);
+  height: 100svh;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(4px, 1.2svh, 14px))
+           clamp(18px, 3.2vw, 48px)
+           clamp(14px, 2.2svh, 28px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cooperation-main {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cooperation-header {
+  flex: 0 0 auto;
+  margin: 0 auto clamp(18px, 2.5svh, 28px);
+  max-width: 1000px;
+}
+
+.cooperation-header h1 {
+  margin: 0;
+  font-size: clamp(3.2rem, 5.6vw, 5rem);
+  line-height: 1;
+}
+
+.cooperation-header p {
+  display: none !important;
+}
+
+.partners-grid {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 26px);
+  align-items: stretch;
+}
+
+.partner-card {
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(112px, 158px) minmax(0, 1fr);
+  gap: clamp(14px, 1.8vw, 24px);
+  align-items: center;
+  padding: clamp(14px, 1.7vw, 24px);
+  border-radius: clamp(20px, 1.7vw, 28px);
+}
+
+.partner-logo-box {
+  max-width: 158px;
+  border-radius: 20px;
+  font-size: clamp(1.15rem, 1.65vw, 1.75rem);
+}
+
+.partner-type {
+  padding: 6px 14px;
+  margin: 0 0 10px;
+  font-size: clamp(0.78rem, 0.9vw, 0.95rem);
+}
+
+.partner-card h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.08;
+}
+
+.partner-description {
+  margin: 0 0 10px;
+  font-size: clamp(0.88rem, 1vw, 1.06rem);
+  line-height: 1.34;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.partner-info {
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.partner-info span {
+  padding: 6px 10px;
+  font-size: clamp(0.74rem, 0.86vw, 0.9rem);
+  line-height: 1.15;
+}
+
+.partner-button {
+  min-height: 40px;
+  padding: 8px 24px;
+  font-size: clamp(0.86rem, 0.95vw, 1rem);
+}
+
+@media (max-height: 780px) and (min-width: 900px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 14px) + var(--nav-control-size, 58px) + 2px);
+    padding-bottom: 12px;
+  }
+
+  .cooperation-header {
+    margin-bottom: 14px;
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(2.85rem, 5vw, 4.35rem);
+  }
+
+  .partners-grid {
+    gap: 12px 18px;
+  }
+
+  .partner-card {
+    grid-template-columns: minmax(92px, 132px) minmax(0, 1fr);
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .partner-logo-box {
+    max-width: 132px;
+    border-radius: 18px;
+  }
+
+  .partner-description {
+    -webkit-line-clamp: 2;
+  }
+
+  .partner-info span:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    max-width: none;
+  }
+
+  .partner-card {
+    grid-template-columns: minmax(90px, 130px) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page {
+    height: auto;
+    min-height: 100svh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body.cooperation-page .fade-page {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+    padding-top: calc(var(--page-edge, 12px) + var(--nav-control-size, 54px) + 12px);
+    padding-bottom: 28px;
+  }
+
+  .cooperation-header {
+    margin-bottom: 18px;
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(2.5rem, 11vw, 3.45rem);
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 16px;
+  }
+
+  .partner-card {
+    grid-template-columns: minmax(78px, 110px) minmax(0, 1fr);
+    text-align: left;
+    padding: 14px;
+  }
+
+  .partner-logo-box {
+    width: 100%;
+    max-width: 110px;
+    margin: 0;
+  }
+
+  .partner-content {
+    align-items: flex-start;
+  }
+
+  .partner-info {
+    justify-content: flex-start;
+  }
+
+  .partner-button {
+    width: auto;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .partner-logo-box {
+    margin: 0 auto;
+    max-width: 128px;
+  }
+
+  .partner-content {
+    align-items: center;
+  }
+
+  .partner-info {
+    justify-content: center;
+  }
+
+  .partner-button {
+    width: min(100%, 240px);
+  }
+}
+
+
+/* ===================== WSPÓŁPRACE — POPRAWKA V16 ===================== */
+/* 3 firmy w jednym rzędzie, tytuł wyżej i większy odstęp między tytułem a kartami. */
+@media (min-width: 1181px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) - clamp(8px, 1.2svh, 16px));
+    padding-left: clamp(18px, 2.6vw, 42px);
+    padding-right: clamp(18px, 2.6vw, 42px);
+  }
+
+  .cooperation-main {
+    justify-content: flex-start;
+  }
+
+  .cooperation-header {
+    margin-bottom: clamp(42px, 6svh, 74px);
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(3.3rem, 5.4vw, 5.1rem);
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    gap: clamp(18px, 2.1vw, 34px);
+    align-items: stretch;
+  }
+
+  .partner-card {
+    grid-template-columns: 1fr;
+    align-content: start;
+    justify-items: center;
+    text-align: center;
+    gap: clamp(14px, 1.8svh, 22px);
+    padding: clamp(18px, 2.1vw, 30px);
+  }
+
+  .partner-logo-box {
+    width: min(44%, 190px);
+    max-width: 190px;
+  }
+
+  .partner-content {
+    align-items: center;
+    width: 100%;
+  }
+
+  .partner-info {
+    justify-content: center;
+  }
+
+  .partner-button {
+    align-self: center;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 14px) + var(--nav-control-size, 58px) - 8px);
+  }
+
+  .cooperation-header {
+    margin-bottom: clamp(32px, 5svh, 54px);
+  }
+
+  .cooperation-header h1 {
+    font-size: clamp(3rem, 5vw, 4.45rem);
+  }
+
+  .partner-card {
+    padding: clamp(14px, 1.6vw, 24px);
+    gap: 12px;
+  }
+
+  .partner-logo-box {
+    width: min(38%, 150px);
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 761px) {
+  .cooperation-header {
+    margin-bottom: clamp(30px, 4svh, 48px);
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .partner-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .partner-logo-box {
+    width: min(48%, 150px);
+    max-width: 150px;
+    margin: 0 auto;
+  }
+
+  .partner-content {
+    align-items: center;
+  }
+
+  .partner-info {
+    justify-content: center;
+  }
+}
+
+/* ===================== WSPÓŁPRACE — POPRAWKA V17 ===================== */
+/* 3 konkretne firmy, pod logo tylko napis „Partner”, bez sekcji Zakres/Status. */
+body.cooperation-page .partner-info {
+  display: none !important;
+}
+
+body.cooperation-page .partner-card {
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto auto 1fr;
+  justify-items: center;
+  text-align: center;
+}
+
+body.cooperation-page .partner-logo-box span {
+  display: block;
+  max-width: 100%;
+  padding: 0 8px;
+  text-align: center;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+body.cooperation-page .partner-type {
+  margin: 0 0 clamp(8px, 1.2svh, 14px);
+  padding: 6px 18px;
+  align-self: center;
+}
+
+body.cooperation-page .partner-content {
+  width: 100%;
+  align-items: center;
+}
+
+body.cooperation-page .partner-description {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-line-clamp: 4;
+}
+
+@media (min-width: 1181px) {
+  body.cooperation-page .partner-card {
+    align-content: start;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(46%, 190px);
+    max-width: 190px;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .partner-description {
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .partner-card {
+    text-align: center;
+    padding: 18px;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(100%, 145px);
+    max-width: 145px;
+    margin: 0 auto;
+  }
+
+  body.cooperation-page .partner-content {
+    align-items: center;
+  }
+}
+
+
+/* ===================== WSPÓŁPRACE — POPRAWKA V18 ===================== */
+/* Wyśrodkowanie napisów i krótkich opisów w kartach firm. */
+body.cooperation-page .partners-grid {
+  align-items: stretch;
+}
+
+body.cooperation-page .partner-card {
+  align-content: center !important;
+  justify-content: center !important;
+  justify-items: center !important;
+  text-align: center !important;
+  grid-template-rows: auto auto auto !important;
+  row-gap: clamp(10px, 1.45svh, 18px) !important;
+}
+
+body.cooperation-page .partner-logo-box {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.cooperation-page .partner-type {
+  align-self: center !important;
+  justify-self: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+body.cooperation-page .partner-content {
+  width: min(100%, 460px) !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+body.cooperation-page .partner-card h2 {
+  width: 100% !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: clamp(8px, 1.1svh, 14px) !important;
+}
+
+body.cooperation-page .partner-description {
+  width: 100% !important;
+  max-width: 430px !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: clamp(12px, 1.4svh, 18px) !important;
+}
+
+body.cooperation-page .partner-button {
+  align-self: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 1181px) {
+  body.cooperation-page .partner-card {
+    padding-top: clamp(20px, 2vw, 34px) !important;
+    padding-bottom: clamp(20px, 2vw, 34px) !important;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(44%, 182px) !important;
+    max-width: 182px !important;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .partner-card {
+    row-gap: 10px !important;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(38%, 146px) !important;
+    max-width: 146px !important;
+  }
+}
+
+/* V19 — magiczny pył tylko w tle, nie w kartach */
+body.cooperation-page .partner-card {
+  background: #082b4f !important;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+body.cooperation-page .partner-logo-box,
+body.cooperation-page .partner-content,
+body.cooperation-page .partner-button {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* ===================== WSPÓŁPRACE — POPRAWKA V20 ===================== */
+/* Tytuł wyżej, większa przerwa do kart partnerów. */
+@media (min-width: 761px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) - clamp(18px, 2.4svh, 34px)) !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin-bottom: clamp(58px, 7.5svh, 98px) !important;
+  }
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 14px) + var(--nav-control-size, 58px) - 20px) !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin-bottom: clamp(42px, 6svh, 70px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .cooperation-header {
+    margin-bottom: 28px !important;
+  }
+}
+
+
+/* =========================================================
+   V22 — Współprace: mniejsze, bardziej dopracowane karty partnerów.
+   Zachowane kolory i styl strony; zmiana dotyczy proporcji i układu.
+   ========================================================= */
+body.cooperation-page .fade-page {
+  max-width: 1420px !important;
+}
+
+body.cooperation-page .cooperation-main {
+  justify-content: flex-start !important;
+}
+
+body.cooperation-page .cooperation-header {
+  margin-bottom: clamp(44px, 6svh, 76px) !important;
+}
+
+body.cooperation-page .cooperation-header h1 {
+  font-size: clamp(3.15rem, 5vw, 4.7rem) !important;
+}
+
+body.cooperation-page .partners-grid {
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  gap: clamp(18px, 2.1vw, 30px) !important;
+}
+
+body.cooperation-page .partner-card {
+  min-height: clamp(330px, 42svh, 430px) !important;
+  height: auto !important;
+  padding: clamp(18px, 1.8vw, 26px) clamp(16px, 1.7vw, 24px) !important;
+  border-radius: clamp(20px, 1.6vw, 26px) !important;
+  row-gap: clamp(11px, 1.4svh, 17px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24) !important;
+}
+
+body.cooperation-page .partner-logo-box {
+  width: clamp(112px, 10vw, 150px) !important;
+  max-width: 150px !important;
+  border-radius: 18px !important;
+  font-size: clamp(1rem, 1.45vw, 1.55rem) !important;
+}
+
+body.cooperation-page .partner-logo-box img {
+  padding: clamp(10px, 1.4vw, 18px) !important;
+}
+
+body.cooperation-page .partner-type {
+  padding: 5px 16px !important;
+  font-size: clamp(0.78rem, 0.9vw, 0.92rem) !important;
+}
+
+body.cooperation-page .partner-card h2 {
+  font-size: clamp(1.45rem, 1.9vw, 1.9rem) !important;
+  margin-bottom: 8px !important;
+}
+
+body.cooperation-page .partner-description {
+  max-width: 340px !important;
+  font-size: clamp(0.88rem, 0.98vw, 1rem) !important;
+  line-height: 1.38 !important;
+  margin-bottom: clamp(12px, 1.35svh, 18px) !important;
+}
+
+body.cooperation-page .partner-button {
+  min-height: 40px !important;
+  padding: 8px 24px !important;
+  font-size: clamp(0.82rem, 0.9vw, 0.95rem) !important;
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .cooperation-header {
+    margin-bottom: clamp(34px, 5svh, 56px) !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: clamp(285px, 40svh, 365px) !important;
+    padding: 14px 18px !important;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: clamp(96px, 8vw, 124px) !important;
+    max-width: 124px !important;
+  }
+
+  body.cooperation-page .partner-description {
+    -webkit-line-clamp: 3 !important;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 761px) {
+  body.cooperation-page .partners-grid {
+    max-width: 980px !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: clamp(320px, 42svh, 420px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .cooperation-header {
+    margin-bottom: 26px !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    max-width: 520px !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+
+  body.cooperation-page .partner-logo-box {
+    width: min(100%, 132px) !important;
+    max-width: 132px !important;
+  }
+}
+
+
+/* =========================================================
+   V23 — loader: prędkość wyłaniania logo wraca do czasu z V21.
+   Gwieździste tło loadera zostaje, zmieniony jest tylko czas animacji logo.
+   ========================================================= */
+.loader-logo {
+  transition: opacity 1.4s ease-out, transform 1.4s ease-out !important;
+}
+.loader-logo img {
+  transition: filter 1.6s ease-out !important;
+}
+.loader-logo.fade-out {
+  opacity: 0.25 !important;
+  transform: scale(0.92) !important;
+  transition: opacity 1s ease-out, transform 1s ease-out !important;
+}
+#loader {
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out !important;
+}
+.fade-page {
+  transition: opacity 0.5s ease-in !important;
+}
+
+
+/* =========================================================
+   V23 — Współprace: estetyczny odstęp kart od dołu strony.
+   Karty są odrobinę niższe i nie „siedzą” na samym dole ekranu.
+   ========================================================= */
+body.cooperation-page .fade-page {
+  padding-bottom: clamp(42px, 6.5svh, 86px) !important;
+}
+
+body.cooperation-page .cooperation-main {
+  justify-content: flex-start !important;
+}
+
+body.cooperation-page .cooperation-header {
+  margin-bottom: clamp(50px, 6.8svh, 88px) !important;
+}
+
+body.cooperation-page .partners-grid {
+  flex: 0 1 auto !important;
+  align-items: stretch !important;
+}
+
+body.cooperation-page .partner-card {
+  min-height: clamp(300px, 36svh, 382px) !important;
+  padding-top: clamp(16px, 1.7vw, 24px) !important;
+  padding-bottom: clamp(18px, 2vw, 28px) !important;
+}
+
+body.cooperation-page .partner-logo-box {
+  width: clamp(104px, 9vw, 138px) !important;
+  max-width: 138px !important;
+}
+
+@media (min-width: 1181px) and (max-height: 820px) {
+  body.cooperation-page .fade-page {
+    padding-bottom: clamp(30px, 5svh, 58px) !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin-bottom: clamp(40px, 5.6svh, 62px) !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: clamp(270px, 34svh, 335px) !important;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 761px) {
+  body.cooperation-page .fade-page {
+    height: auto !important;
+    min-height: 100svh !important;
+    overflow-y: auto !important;
+    padding-bottom: clamp(40px, 6svh, 72px) !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: clamp(285px, 35svh, 360px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .fade-page {
+    padding-bottom: 42px !important;
+  }
+}
+
+
+/* =========================================================
+   V34 — Współpraca: cała sekcja i karty wyśrodkowane jak ekran startowy.
+   ========================================================= */
+body.cooperation-page .fade-page {
+  height: 100svh !important;
+  min-height: 100svh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(8px, 2svh, 28px)) !important;
+  padding-bottom: clamp(28px, 5svh, 70px) !important;
+}
+
+body.cooperation-page .cooperation-main {
+  flex: 0 1 auto !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+body.cooperation-page .cooperation-header {
+  width: 100% !important;
+  margin: 0 auto clamp(40px, 6svh, 72px) !important;
+  text-align: center !important;
+}
+
+body.cooperation-page .cooperation-header h1 {
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+body.cooperation-page .partners-grid {
+  width: min(100%, 1420px) !important;
+  max-width: 1420px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-rows: none !important;
+  gap: clamp(24px, 3.2vw, 48px) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+body.cooperation-page .partner-card {
+  height: auto !important;
+  min-height: clamp(330px, 42svh, 430px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: clamp(24px, 2.6vw, 36px) !important;
+  gap: clamp(12px, 1.7svh, 20px) !important;
+}
+
+body.cooperation-page .partner-logo-box {
+  width: clamp(122px, 10vw, 162px) !important;
+  max-width: 162px !important;
+  margin: 0 auto !important;
+}
+
+body.cooperation-page .partner-type {
+  margin: clamp(8px, 1.3svh, 14px) auto 0 !important;
+}
+
+body.cooperation-page .partner-content {
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+body.cooperation-page .partner-card h2 {
+  text-align: center !important;
+  margin: clamp(4px, 0.8svh, 10px) 0 clamp(8px, 1.2svh, 14px) !important;
+}
+
+body.cooperation-page .partner-button {
+  margin-top: 0 !important;
+  align-self: center !important;
+}
+
+@media (max-width: 1180px) {
+  body.cooperation-page .fade-page {
+    height: auto !important;
+    min-height: 100svh !important;
+    overflow-y: auto !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 560px !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: auto !important;
+  }
+}
+
+
+/* =========================================================
+   V40 — Współpraca: na telefonie i wąskich ekranach musi dać się normalnie przewijać.
+   ========================================================= */
+html.normal-scroll-page:has(body.cooperation-page),
+html:has(body.cooperation-page) {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100dvh !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+}
+
+body.cooperation-page,
+body.cooperation-page .fade-page,
+body.cooperation-page .cooperation-main {
+  overflow-y: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+body.cooperation-page {
+  min-height: 100dvh !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+}
+
+@media (max-width: 1180px) {
+  body.cooperation-page .fade-page {
+    display: block !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-bottom: 64px !important;
+  }
+
+  body.cooperation-page .cooperation-main {
+    display: block !important;
+    min-height: 0 !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 560px !important;
+    margin-inline: auto !important;
+    padding-bottom: 28px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 22px) !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-bottom: 70px !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin-bottom: 28px !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    gap: 22px !important;
+  }
+}
+
+/* =========================================================
+   V42 — Współpraca: na telefonie zawsze normalny scroll.
+   ========================================================= */
+@media (max-width: 760px) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-bottom: 64px !important;
+  }
+}
+
+/* =========================================================
+   V46 — Współpraca: desktop statyczny, telefon/tablet scroll także poziomo
+   ========================================================= */
+
+/* Komputer / wysoki ekran: karta współpracy ma być nieruchoma, jeśli mieści się na jednej stronie. */
+@media (min-width: 981px) and (min-height: 700px) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Telefony i niskie ekrany, również poziomo: zawsze normalny scroll. */
+@media (max-width: 980px), (max-height: 699px) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page,
+  body.cooperation-page .cooperation-main {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.cooperation-page .fade-page {
+    padding-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + 16px) !important;
+    padding-bottom: 48px !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin-bottom: 22px !important;
+  }
+
+  body.cooperation-page .cooperation-header h1 {
+    font-size: clamp(2rem, 12svh, 3.1rem) !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    grid-template-columns: 1fr !important;
+    width: min(100%, 560px) !important;
+    max-width: 560px !important;
+    gap: 18px !important;
+    margin-inline: auto !important;
+    padding-bottom: 32px !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: auto !important;
+    padding: clamp(16px, 4svh, 24px) !important;
+  }
+}
+
+/* =========================================================
+   V47 — Współpraca: wygląd jak wcześniej, desktop nieruchomy,
+   telefon/tablet pionowo i poziomo normalnie przewijany.
+   ========================================================= */
+
+/* Desktop: widok statyczny, trzy karty w jednym rzędzie jak w poprzedniej wersji. */
+@media (min-width: 981px) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: calc(var(--page-edge, 18px) + var(--nav-control-size, 62px) + clamp(18px, 3svh, 38px)) !important;
+    padding-bottom: clamp(34px, 5svh, 74px) !important;
+  }
+
+  body.cooperation-page .cooperation-main {
+    width: 100% !important;
+    min-height: 0 !important;
+  }
+
+  body.cooperation-page .cooperation-header {
+    margin: 0 auto clamp(40px, 6svh, 72px) !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    width: min(100%, 1420px) !important;
+    max-width: 1420px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: clamp(24px, 3.2vw, 48px) !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    padding-bottom: 0 !important;
+  }
+
+  body.cooperation-page .partner-card {
+    min-height: clamp(330px, 42svh, 430px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: clamp(24px, 2.6vw, 36px) !important;
+    gap: clamp(12px, 1.7svh, 20px) !important;
+  }
+}
+
+/* Telefon / tablet / niski ekran: przewijanie zawsze aktywne, również poziomo. */
+@media (max-width: 980px) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page,
+  body.cooperation-page .cooperation-main {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    grid-template-columns: 1fr !important;
+    width: min(100%, 560px) !important;
+    max-width: 560px !important;
+    margin-inline: auto !important;
+    padding-bottom: 42px !important;
+  }
+}
+
+/* =========================================================
+   V48 — Współpraca: desktop nieruchomy, telefon przewijany
+   ========================================================= */
+#sideMenu {
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-y: contain !important;
+  touch-action: pan-y !important;
+  padding-top: 100px !important;
+}
+
+#sideMenu ul {
+  min-height: max-content !important;
+  padding-bottom: max(42px, env(safe-area-inset-bottom)) !important;
+}
+
+#sideMenu a {
+  font-size: 1.2rem !important;
+  padding: 15px 30px !important;
+  line-height: normal !important;
+}
+
+@media (min-width: 981px) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 980px) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page,
+  body.cooperation-page .cooperation-main {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+/* =========================================================
+   V49 — poprawki mobilne i menu
+   - menu przewijane poniżej hamburgera/logo
+   - lepsze dopasowanie poziomego telefonu
+   - mocniejszy, ale nadal subtelny efekt gwiazdek
+   ========================================================= */
+
+/* Menu boczne: przewijanie zaczyna się dopiero pod ikonami menu/logo,
+   dzięki temu tekst menu nie nachodzi na hamburger ani logo HMI. */
+#sideMenu {
+  --menu-safe-top: calc(var(--page-edge, 20px) + var(--nav-control-size, 62px) + clamp(16px, 3svh, 28px));
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  padding-top: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#sideMenu ul {
+  list-style: none !important;
+  margin: var(--menu-safe-top) 0 0 0 !important;
+  padding: 0 0 max(44px, env(safe-area-inset-bottom)) 0 !important;
+  max-height: calc(100dvh - var(--menu-safe-top)) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-y: contain !important;
+  touch-action: pan-y !important;
+  scrollbar-width: thin;
+}
+
+#sideMenu a {
+  font-size: 1.2rem !important;
+  padding: 15px 30px !important;
+  line-height: normal !important;
+}
+
+@media (max-width: 980px) {
+  #sideMenu {
+    --menu-safe-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 52px) + clamp(12px, 3svh, 22px));
+  }
+}
+
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  #sideMenu {
+    --menu-safe-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 46px) + 12px);
+  }
+
+  #sideMenu ul {
+    max-height: calc(100svh - var(--menu-safe-top)) !important;
+  }
+}
+
+/* Loader — mocniejszy, bardziej widoczny efekt gwiezdny, ale nadal jako tło. */
+#loader::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: -14% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,1) 0 1.35px, transparent 2.65px),
+    radial-gradient(circle at 76% 28%, rgba(182,226,255,0.98) 0 1.18px, transparent 2.45px),
+    radial-gradient(circle at 38% 64%, rgba(255,255,255,0.90) 0 1.1px, transparent 2.25px),
+    radial-gradient(circle at 88% 78%, rgba(255,239,160,0.86) 0 1.2px, transparent 2.38px),
+    radial-gradient(circle at 48% 12%, rgba(210,245,255,0.82) 0 1px, transparent 2px),
+    radial-gradient(circle at 22% 74%, rgba(255,255,255,0.90) 0 1.08px, transparent 2.18px) !important;
+  background-size: 175px 175px, 240px 240px, 310px 310px, 390px 390px, 500px 500px, 260px 260px !important;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.95)) drop-shadow(0 0 18px rgba(140,205,255,0.58)) !important;
+  opacity: 0.9 !important;
+  animation: loaderMagicTwinkle 2.9s ease-in-out infinite alternate,
+             loaderMagicDrift 24s ease-in-out infinite alternate !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+#loader .loader-logo {
+  position: relative;
+  z-index: 2;
+}
+
+/* Strona główna — telefon poziomo: całość ma się mieścić w jednej sekcji.
+   Zmniejszamy głównie odstępy, nie zmieniamy stylu. */
+@media (orientation: landscape) and (max-height: 560px) and (max-width: 980px) {
+  body.home-page .section,
+  body.sections-page .section {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    padding-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 46px) + 4px) !important;
+    padding-bottom: max(5px, env(safe-area-inset-bottom)) !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    width: min(100%, 97vw) !important;
+    max-width: min(980px, 97vw) !important;
+    max-height: calc(100svh - var(--nav-control-size, 46px) - var(--page-edge, 8px) - 10px) !important;
+    padding: 0 clamp(6px, 1.2vw, 12px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.02rem, 5.35svh, 1.72rem) !important;
+    line-height: 1.02 !important;
+    margin-bottom: clamp(3px, 0.9svh, 7px) !important;
+    max-width: 96vw !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.55rem, 2.15svh, 0.76rem) !important;
+    line-height: 1.12 !important;
+    max-width: min(940px, 94vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: clamp(4px, 1.1svh, 7px) !important;
+    gap: clamp(5px, 1.2vw, 9px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    max-width: 96vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 44vw !important;
+    font-size: clamp(0.66rem, 2.45svh, 0.9rem) !important;
+    line-height: 1.08 !important;
+    padding: clamp(6px, 1.55svh, 9px) clamp(11px, 2.3vw, 17px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 30px !important;
+  }
+
+  body.sections-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+
+  body.home-page #section4 .content {
+    width: min(100%, 98vw) !important;
+    max-width: 98vw !important;
+  }
+
+  body.home-page #section4 .content h1 {
+    font-size: clamp(1rem, 5svh, 1.55rem) !important;
+    line-height: 1.02 !important;
+    margin-bottom: clamp(2px, 0.7svh, 5px) !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    width: min(100%, 97vw) !important;
+    max-width: 97vw !important;
+    grid-template-columns: minmax(86px, 0.78fr) minmax(210px, 310px) minmax(86px, 0.78fr) !important;
+    gap: clamp(5px, 1vw, 10px) !important;
+    align-items: center !important;
+  }
+
+  body.home-page #section4 .contact-buttons-vertical {
+    width: min(100%, 310px) !important;
+    gap: clamp(3px, 0.75svh, 6px) !important;
+    margin-top: 0 !important;
+  }
+
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    font-size: clamp(0.68rem, 2.45svh, 0.9rem) !important;
+    line-height: 1.08 !important;
+    padding: clamp(6px, 1.55svh, 9px) clamp(10px, 2vw, 15px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 28px !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    height: clamp(86px, 24svh, 124px) !important;
+    padding: clamp(5px, 1.3svh, 8px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(62px, 15svh, 90px) !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 430px) and (max-width: 980px) {
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(0.88rem, 4.7svh, 1.42rem) !important;
+    margin-bottom: 3px !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.48rem, 1.88svh, 0.64rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    margin-top: 4px !important;
+    gap: 5px !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page #section4 .contact-btn,
+  body.home-page #section4 .contact-btn.big {
+    font-size: clamp(0.52rem, 2.02svh, 0.68rem) !important;
+    padding: 5px 9px !important;
+    border-width: 1px !important;
+  }
+
+  body.home-page #section4 .contact-section-layout {
+    grid-template-columns: minmax(70px, 0.68fr) minmax(188px, 276px) minmax(70px, 0.68fr) !important;
+  }
+
+  body.home-page #section4 .contact-qr-panel,
+  body.home-page #section4 .contact-qr-panel:hover {
+    height: clamp(72px, 22svh, 104px) !important;
+  }
+
+  body.home-page #section4 .qr-frame {
+    width: clamp(54px, 13.5svh, 78px) !important;
+  }
+}
+
+/* =========================================================
+   V49 — Współpraca: desktop statycznie jak poprzednio,
+   telefon/tablet w pionie i poziomie z normalnym scrollowaniem.
+   ========================================================= */
+@media (min-width: 981px) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  body.cooperation-page .partners-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: min(100%, 1420px) !important;
+    max-width: 1420px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 980px), (pointer: coarse) {
+  html:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page),
+  html.normal-scroll-page:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page,
+  body.cooperation-page .cooperation-main {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+
+/* =========================================================
+   V50 — Współpraca: desktop statyczny, telefon przewijany
+   ========================================================= */
+@media (min-width: 981px) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body.cooperation-page {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    min-height: 100vh !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 980px), (pointer: coarse) {
+  html:has(body.cooperation-page),
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+
+/* =========================================================
+   V51 — menu hamburgera na telefonie: scroll bez nachodzenia
+   Linki przewijają się w obszarze pod hamburgerem i logo HMI.
+   Na komputerze układ menu zostaje bez zmian.
+   ========================================================= */
+@media (max-width: 980px), (max-height: 620px) and (pointer: coarse) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  #sideMenu ul {
+    --menu-safe-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 56px) + 18px);
+    margin: var(--menu-safe-top) 0 0 0 !important;
+    padding: 0 0 max(42px, env(safe-area-inset-bottom)) 0 !important;
+    height: calc(100dvh - var(--menu-safe-top)) !important;
+    max-height: calc(100dvh - var(--menu-safe-top)) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-gutter: stable;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  #sideMenu ul {
+    --menu-safe-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 48px) + 14px);
+  }
+}
+
+
+/* =========================================================
+   V51 — Współpraca: na komputerze statycznie jak wcześniej,
+   na telefonie/pointer coarse zawsze normalny scroll.
+   ========================================================= */
+@media (min-width: 981px) and (pointer: fine) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 980px), (pointer: coarse) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  html.snap-page:has(body.cooperation-page),
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page,
+  body.cooperation-page .cooperation-main {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+
+/* V51 — gwiazdki delikatnie mocniejsze, nadal jako tło. */
+.page-magic-dust::before,
+.page-magic-dust::after,
+.loader-magic-dust::before,
+.loader-magic-dust::after {
+  opacity: 1 !important;
+  filter: brightness(1.18) drop-shadow(0 0 4px rgba(187,238,255,0.34)) !important;
+}
+
+
+/* =========================================================
+   V52 — finalne poprawki: menu mobilne, rozmiary członków,
+   landscape dla strony głównej i Sekcji Koła.
+   ========================================================= */
+
+/* Wszystkie zdjęcia osób w Zarządzie, Liderach i Członkach mają te same parametry.
+   Opiekun zostaje osobnym, większym elementem. */
+body.members-page .members-grid-zarzad .person-single,
+body.members-page .members-grid .person {
+  width: 220px !important;
+  max-width: 100% !important;
+}
+
+body.members-page .members-grid-zarzad .person-single img,
+body.members-page .members-grid .person img,
+body.members-page .members-grid-zarzad .person img,
+body.members-page .members-grid-zarzad .person1 img,
+body.members-page .members-grid-zarzad2 .person2 img {
+  width: 180px !important;
+  height: 180px !important;
+  border-width: 4px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  margin-bottom: 20px !important;
+}
+
+@media (max-width: 600px) {
+  body.members-page .members-grid-zarzad .person-single img,
+  body.members-page .members-grid .person img,
+  body.members-page .members-grid-zarzad .person img,
+  body.members-page .members-grid-zarzad .person1 img,
+  body.members-page .members-grid-zarzad2 .person2 img {
+    width: 160px !important;
+    height: 160px !important;
+  }
+}
+
+/* Menu hamburgera — na komputerze zostaje klasyczne/statyczne,
+   a na telefonie/płytkich ekranach przewija się w osobnym obszarze pod ikonami. */
+@media (max-width: 980px), (max-height: 620px) and (pointer: coarse) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    touch-action: none !important;
+  }
+
+  #sideMenu ul {
+    --menu-safe-top: calc(var(--page-edge, 10px) + var(--nav-control-size, 56px) + 22px);
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: var(--menu-safe-top) !important;
+    bottom: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 max(54px, env(safe-area-inset-bottom)) 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-gutter: stable;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  #sideMenu ul {
+    --menu-safe-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 48px) + 18px);
+  }
+}
+
+/* Strona główna i Sekcje Koła — telefon poziomo.
+   Układ ma działać tak samo: treść skaluje się do wysokości ekranu i nie wchodzi pod menu. */
+@media (orientation: landscape) and (max-width: 1024px) {
+  body.home-page .section,
+  body.sections-page .section {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    padding-top: calc(var(--page-edge, 8px) + var(--nav-control-size, 50px) + 8px) !important;
+    padding-bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    width: min(100%, 96vw) !important;
+    max-width: min(980px, 96vw) !important;
+    height: auto !important;
+    max-height: calc(100svh - var(--nav-control-size, 50px) - var(--page-edge, 8px) - 20px) !important;
+    padding: 0 clamp(8px, 1.5vw, 16px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: clamp(4px, 1svh, 8px) !important;
+    overflow: hidden !important;
+    transform: none !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(1.08rem, 5.2svh, 1.85rem) !important;
+    line-height: 1.04 !important;
+    margin: 0 !important;
+    max-width: 94vw !important;
+    text-wrap: balance;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.56rem, 2.18svh, 0.8rem) !important;
+    line-height: 1.14 !important;
+    max-width: min(920px, 92vw) !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  body.sections-page .section .buttons-container,
+  body.home-page .section .buttons-container {
+    margin-top: clamp(4px, 1svh, 8px) !important;
+    gap: clamp(6px, 1.3vw, 10px) !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 94vw !important;
+    padding: 0 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page .section .achievements-btn,
+  body.home-page .section .achievements-btS {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 44vw !important;
+    font-size: clamp(0.58rem, 2.1svh, 0.78rem) !important;
+    line-height: 1.08 !important;
+    padding: clamp(5px, 1.1svh, 8px) clamp(10px, 2vw, 16px) !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    border-radius: 30px !important;
+  }
+
+  body.sections-page .section .achievements-btS,
+  body.home-page .section .achievements-btS {
+    margin-top: 0 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 430px) {
+  body.home-page .section,
+  body.sections-page .section {
+    padding-top: calc(var(--page-edge, 7px) + var(--nav-control-size, 46px) + 5px) !important;
+    padding-bottom: 5px !important;
+  }
+
+  body.home-page .content,
+  body.sections-page .content {
+    max-height: calc(100svh - var(--nav-control-size, 46px) - var(--page-edge, 7px) - 10px) !important;
+    gap: 3px !important;
+  }
+
+  body.home-page .content h1,
+  body.sections-page .content h1 {
+    font-size: clamp(0.86rem, 4.25svh, 1.34rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.home-page .content p,
+  body.sections-page .content p {
+    font-size: clamp(0.43rem, 1.78svh, 0.62rem) !important;
+    line-height: 1.07 !important;
+  }
+
+  body.sections-page .section .buttons-container,
+  body.home-page .section .buttons-container {
+    margin-top: 3px !important;
+    gap: 5px !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS,
+  body.home-page .section .achievements-btn,
+  body.home-page .section .achievements-btS {
+    font-size: clamp(0.48rem, 1.9svh, 0.64rem) !important;
+    line-height: 1.05 !important;
+    padding: 4px 8px !important;
+    border-width: 1px !important;
+  }
+}
+
+
+/* =========================================================
+   V52 — Współpraca: desktop nieruchomo, telefon/tablet przewijalny.
+   ========================================================= */
+@media (min-width: 981px) and (pointer: fine) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 980px), (pointer: coarse) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  html.snap-page:has(body.cooperation-page),
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page,
+  body.cooperation-page .cooperation-main,
+  body.cooperation-page .partners-grid {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+
+/* =========================================================
+   V53 — menu hamburgera: desktop statyczny, telefon poziomo/pionowo przewijalny.
+   Nie zmienia wielkości liter ani wyglądu przycisków.
+   ========================================================= */
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  #sideMenu {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 100px !important;
+    overflow: visible !important;
+    overscroll-behavior: auto !important;
+    touch-action: auto !important;
+  }
+
+  #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    touch-action: auto !important;
+    list-style: none !important;
+  }
+}
+
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    touch-action: auto !important;
+  }
+
+  #sideMenu ul {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 10px) + var(--nav-control-size, 56px) + 18px) !important;
+    bottom: max(14px, env(safe-area-inset-bottom)) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 34px 0 !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-width: thin;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  #sideMenu ul {
+    top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 8px) + var(--nav-control-size, 48px) + 12px) !important;
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* =========================================================
+   V55 — Współpraca: przewijanie strony i menu na telefonie
+   - komputer: strona Współpraca pozostaje statyczna
+   - telefon/tablet pionowo i poziomo: działa przewijanie strony
+   - menu hamburgera na Współpracy przewija się pod logo/HMI jak na innych podstronach
+   ========================================================= */
+
+/* Komputer / duży ekran — bez scrollowania strony Współpraca, jak wcześniej */
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  body.cooperation-page #sideMenu {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 100px !important;
+    overflow: visible !important;
+    touch-action: auto !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    touch-action: auto !important;
+  }
+}
+
+/* Telefon / tablet — normalne przewijanie podstrony Współpraca */
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  html.normal-scroll-page:has(body.cooperation-page),
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page,
+  body.cooperation-page .cooperation-main,
+  body.cooperation-page .partners-grid {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Menu na telefonie — samą listę linków przewijamy pod hamburgerem/logo */
+  body.cooperation-page #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    touch-action: none !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 10px) + var(--nav-control-size, 56px) + 18px) !important;
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 42px 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    scrollbar-width: thin !important;
+    list-style: none !important;
+  }
+
+  body.cooperation-page #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  body.cooperation-page #sideMenu ul {
+    top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 8px) + var(--nav-control-size, 48px) + 12px) !important;
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* =========================================================
+   V56 — MENU HAMBURGER: płynne przewijanie na telefonie,
+   ukrywanie linków pod górną strefą menu, desktop statycznie.
+   ========================================================= */
+:root {
+  --menu-scroll-top-space: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 12px) + var(--nav-control-size, 56px) + 16px);
+  --menu-scroll-bottom-space: max(18px, env(safe-area-inset-bottom));
+}
+
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  #sideMenu {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 100px !important;
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+    touch-action: auto !important;
+    -webkit-overflow-scrolling: auto !important;
+  }
+
+  #sideMenu::before {
+    display: none !important;
+  }
+
+  #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    touch-action: auto !important;
+  }
+}
+
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #sideMenu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: var(--menu-scroll-top-space) !important;
+    background: #001a33 !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
+
+  #sideMenu ul {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: var(--menu-scroll-top-space) !important;
+    bottom: var(--menu-scroll-bottom-space) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 38px 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-width: thin !important;
+    z-index: 1 !important;
+  }
+
+  #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px) {
+  :root {
+    --menu-scroll-top-space: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 10px);
+    --menu-scroll-bottom-space: max(8px, env(safe-area-inset-bottom));
+  }
+
+  #sideMenu ul {
+    padding-bottom: 26px !important;
+  }
+}
+
+/* V56 — Współpraca: doprecyzowanie menu mobilnego, bo ta podstrona ma własny CSS. */
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  body.cooperation-page #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  body.cooperation-page #sideMenu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: var(--menu-scroll-top-space) !important;
+    background: #001a33 !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: var(--menu-scroll-top-space) !important;
+    bottom: var(--menu-scroll-bottom-space) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 38px 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-width: thin !important;
+    z-index: 1 !important;
+  }
+}
+
+/* =========================================================
+   V57 — TYLKO DODANE: scroll menu hamburgera na telefonie poziomo
+   Desktop zostaje bez zmian.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 980px),
+       (orientation: landscape) and (max-height: 620px) {
+  #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 14px) !important;
+    padding-bottom: max(28px, env(safe-area-inset-bottom)) !important;
+  }
+
+  #sideMenu::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 0 34px 0 !important;
+    list-style: none !important;
+    touch-action: pan-y !important;
+  }
+}
+
+/* =========================================================
+   V58 — Współpraca: normalne przewijanie strony jak na pozostałych podstronach
+   Nie zmienia układu kart ani menu. Gdy treść mieści się na ekranie, strona pozostaje nieruchoma;
+   gdy treść jest wyższa od ekranu, można ją normalnie przewijać.
+   ========================================================= */
+html:has(body.cooperation-page),
+html:has(body.cooperation-page) body,
+body.cooperation-page {
+  height: auto !important;
+  min-height: 100dvh !important;
+  max-height: none !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  scroll-snap-type: none !important;
+  overscroll-behavior-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: auto !important;
+}
+
+body.cooperation-page .fade-page,
+body.cooperation-page .cooperation-main,
+body.cooperation-page .partners-grid {
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  body.cooperation-page {
+    min-height: 100dvh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page {
+    min-height: 100dvh !important;
+    padding-bottom: max(44px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* =========================================================
+   V59 — Współpraca: przewijanie menu hamburgera jak na pozostałych podstronach
+   Tylko mobile / niski ekran. Desktop zostaje statyczny.
+   Linki chowają się pod górną maską, więc nie nachodzą na hamburger i logo HMI.
+   ========================================================= */
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  body.cooperation-page #sideMenu {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 100px !important;
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+    overscroll-behavior: auto !important;
+    touch-action: auto !important;
+    -webkit-overflow-scrolling: auto !important;
+  }
+
+  body.cooperation-page #sideMenu::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    touch-action: auto !important;
+  }
+}
+
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  body.cooperation-page #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  body.cooperation-page #sideMenu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 10px) + var(--nav-control-size, 56px) + 18px) !important;
+    background: #001a33 !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 10px) + var(--nav-control-size, 56px) + 18px) !important;
+    bottom: max(16px, env(safe-area-inset-bottom)) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 44px 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+    list-style: none !important;
+    scrollbar-width: thin !important;
+    z-index: 1 !important;
+  }
+
+  body.cooperation-page #sideMenu a {
+    font-size: 1.2rem !important;
+    padding: 15px 30px !important;
+    line-height: normal !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px),
+       (orientation: landscape) and (max-height: 620px) {
+  body.cooperation-page #sideMenu::before {
+    height: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 12px) !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    top: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 12px) !important;
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    padding-bottom: 30px !important;
+  }
+}
+
+
+/* =========================================================
+   V60 — Współpraca: scroll menu skopiowany z Social Media.
+   Desktop/duży ekran: strona i menu zostają statyczne.
+   Telefon, także poziomo: menu hamburgera oraz strona Współpraca
+   przewijają się normalnie i płynnie.
+   ========================================================= */
+
+/* Komputer / duży ekran — bez przewijania, jeśli wszystko mieści się na ekranie. */
+@media (min-width: 981px) and (min-height: 700px) and (hover: hover) and (pointer: fine) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  body.cooperation-page #sideMenu {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 100px !important;
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+    -webkit-overflow-scrolling: auto !important;
+    overscroll-behavior: auto !important;
+    touch-action: auto !important;
+  }
+
+  body.cooperation-page #sideMenu::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    list-style: none !important;
+  }
+}
+
+/* Telefon/tablet/niskie ekrany — strona Współpraca ma normalny scroll. */
+@media (max-width: 980px), (max-height: 699px), (pointer: coarse) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page,
+  body.cooperation-page .cooperation-main,
+  body.cooperation-page .partners-grid {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body.cooperation-page .fade-page {
+    min-height: 100dvh !important;
+    padding-bottom: max(48px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* Telefon pion/poziom — MENU hamburgera przewija się tak jak na Social Media. */
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  body.cooperation-page #sideMenu,
+  body.cooperation-page #sideMenu.mobile-scroll-menu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 10px) + var(--nav-control-size, 56px) + 18px) !important;
+    padding-bottom: max(28px, env(safe-area-inset-bottom)) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page #sideMenu::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 0 44px 0 !important;
+    overflow: visible !important;
+    list-style: none !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page #sideMenu a {
+    font-size: 1.2rem !important;
+    line-height: normal !important;
+    padding: 15px 30px !important;
+  }
+}
+
+/* Telefon poziomo — trochę mniejszy górny odstęp, ale nadal bez nachodzenia na logo i hamburger. */
+@media (orientation: landscape) and (max-width: 980px),
+       (orientation: landscape) and (max-height: 620px) {
+  body.cooperation-page #sideMenu,
+  body.cooperation-page #sideMenu.mobile-scroll-menu {
+    padding-top: calc(env(safe-area-inset-top, 0px) + var(--page-edge, 8px) + var(--nav-control-size, 48px) + 12px) !important;
+    padding-bottom: max(28px, env(safe-area-inset-bottom)) !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    padding-bottom: 36px !important;
+  }
+}
+
+/* =========================================================
+   V61 — Współpraca: desktop statyczny, telefon bez zmian,
+   a menu w poziomie przewija się natywnie jak na Social Media.
+   ========================================================= */
+
+/* Telefon/tablet/niskie ekrany — zostaje normalne przewijanie strony Współpraca. */
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: auto !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    scroll-snap-type: none !important;
+    overscroll-behavior-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+  }
+
+  body.cooperation-page .fade-page,
+  body.cooperation-page .cooperation-main,
+  body.cooperation-page .partners-grid {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+/* Telefon poziomo — menu przewija się natywnie na samym #sideMenu, tak jak na pozostałych podstronach. */
+@media (orientation: landscape) and (max-width: 980px),
+       (orientation: landscape) and (max-height: 620px) {
+  body.cooperation-page #sideMenu {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 14px) !important;
+    padding-bottom: max(28px, env(safe-area-inset-bottom)) !important;
+  }
+
+  body.cooperation-page #sideMenu::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 0 34px 0 !important;
+    list-style: none !important;
+    touch-action: pan-y !important;
+  }
+}
+
+/* Komputer / duży ekran — Współpraca statyczna, bez ruszania wersji mobilnej. */
+@media (min-width: 981px) and (hover: hover) and (pointer: fine) {
+  html:has(body.cooperation-page),
+  html:has(body.cooperation-page) body,
+  body.cooperation-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.cooperation-page .fade-page {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  body.cooperation-page #sideMenu {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 100px !important;
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+    -webkit-overflow-scrolling: auto !important;
+    overscroll-behavior: auto !important;
+    touch-action: auto !important;
+  }
+
+  body.cooperation-page #sideMenu::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  body.cooperation-page #sideMenu ul {
+    position: static !important;
+    inset: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    list-style: none !important;
+    touch-action: auto !important;
+  }
+}
+
+
+/* =========================================================
+   V65 — profesjonalny wygląd: wyłączenie animowanych gwiazdek.
+   ========================================================= */
+.page-magic-dust,
+.section-magic-dust,
+.loader-magic-dust,
+.stars-background,
+#starsCanvas {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+}
+.page-magic-dust::before,
+.page-magic-dust::after,
+.section-magic-dust::before,
+.section-magic-dust::after,
+.loader-magic-dust::before,
+.loader-magic-dust::after {
+  content: none !important;
+  animation: none !important;
+}
+
+/* =========================================================
+   V67 — PROFESJONALNY WYGLĄD: całkowite usunięcie gwiazdek.
+   Brak magicznego pyłu na stronach, w przejściach i w loaderze.
+   ========================================================= */
+.page-magic-dust,
+.section-magic-dust,
+.stars-background,
+#starsCanvas,
+#particles-js {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.page-magic-dust::before,
+.page-magic-dust::after,
+.section-magic-dust::before,
+.section-magic-dust::after,
+#loader::before,
+#loader::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  animation: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Loader zostaje elegancki i czysty — bez gwiezdnego tła. */
+#loader {
+  background: radial-gradient(circle at center, #0a2d5c 0%, #021F42 72%, #000000 100%) !important;
+}
+
+/* =========================================================
+   V67 — Sekcje Koła: czytelniejsze elementy na telefonie poziomo.
+   Większy nagłówek, opis i przyciski, ale nadal w jednej sekcji.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  body.sections-page .section .content {
+    row-gap: clamp(10px, 2.8svh, 20px) !important;
+    padding-left: clamp(20px, 3.6vw, 38px) !important;
+    padding-right: clamp(20px, 3.6vw, 38px) !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(1.52rem, 7.9svh, 2.62rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.90rem, 4.55svh, 1.24rem) !important;
+    line-height: 1.11 !important;
+    max-width: min(1040px, 94vw) !important;
+  }
+
+  body.sections-page .section .buttons-container {
+    gap: clamp(14px, 3vw, 30px) !important;
+    max-width: min(820px, 92vw) !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: clamp(180px, 26vw, 270px) !important;
+    min-height: clamp(34px, 8.4svh, 50px) !important;
+    padding: clamp(8px, 1.9svh, 13px) clamp(18px, 3vw, 32px) !important;
+    font-size: clamp(0.80rem, 2.88svh, 1.10rem) !important;
+    line-height: 1.08 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 900px) and (max-height: 390px) {
+  body.sections-page .section .content {
+    row-gap: clamp(7px, 1.95svh, 13px) !important;
+  }
+
+  body.sections-page .section .content h1,
+  body.sections-page .section .content h1[data-pl][data-en] {
+    font-size: clamp(1.30rem, 6.8svh, 2rem) !important;
+  }
+
+  body.sections-page .section .content p,
+  body.sections-page .section .content p[data-pl][data-en],
+  body.sections-page .section .content:has(.buttons-container) p[data-pl][data-en] {
+    font-size: clamp(0.78rem, 3.9svh, 1.04rem) !important;
+    line-height: 1.075 !important;
+  }
+
+  body.sections-page .section .achievements-btn,
+  body.sections-page .section .achievements-btS {
+    min-width: clamp(155px, 24vw, 225px) !important;
+    min-height: clamp(29px, 7.35svh, 42px) !important;
+    font-size: clamp(0.70rem, 2.5svh, 0.92rem) !important;
+  }
+}
+
+/* =========================================================
+   V67 — Strona główna: delikatnie większa typografia i przyciski
+   w poziomie telefonu, bez zmiany układu desktopowego.
+   ========================================================= */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 560px) {
+  body.home-page .section .content h1 {
+    font-size: clamp(2.1rem, 10.2svh, 3.55rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  body.home-page .section .content p {
+    font-size: clamp(0.92rem, 4.25svh, 1.28rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  body.home-page .stat-number {
+    font-size: clamp(2.35rem, 11svh, 4rem) !important;
+  }
+
+  body.home-page .stat-label {
+    font-size: clamp(0.82rem, 3.4svh, 1.12rem) !important;
+  }
+
+  body.home-page .contact-btn,
+  body.home-page .contact-btn.big {
+    font-size: clamp(0.82rem, 3.2svh, 1.12rem) !important;
+    min-height: clamp(34px, 8.5svh, 48px) !important;
+    padding: clamp(7px, 1.7svh, 12px) clamp(18px, 3.2vw, 32px) !important;
+  }
+}
+
+/* =========================================================
+   V73 — MASKA MENU MOBILNEGO BEZ ZMIANY SCROLLOWANIA
+   Działa tylko wizualnie: gdy menu jest otwarte na telefonie,
+   nazwy podstron chowają się pod górną osłoną zamiast wchodzić
+   widocznie pod hamburger i logo HMI.
+   ========================================================= */
+@media (max-width: 980px), (max-height: 620px), (pointer: coarse) {
+  #sideMenu.menu-open::after,
+  #sideMenu[style*="left: 0"]::after,
+  #sideMenu[style*="left:0"]::after {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: min(260px, 82vw) !important;
+    height: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 10px) + var(--nav-control-size, 56px) + 24px) !important;
+    background: linear-gradient(
+      to bottom,
+      #001a33 0%,
+      #001a33 76%,
+      rgba(0, 26, 51, 0.98) 88%,
+      rgba(0, 26, 51, 0) 100%
+    ) !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 980px),
+       (orientation: landscape) and (max-height: 620px) {
+  #sideMenu.menu-open::after,
+  #sideMenu[style*="left: 0"]::after,
+  #sideMenu[style*="left:0"]::after {
+    height: calc(env(safe-area-inset-top, 0px) + var(--page-safe-top, 8px) + var(--nav-control-size, 48px) + 22px) !important;
+  }
+}
+
+@media (min-width: 981px) and (min-height: 621px) and (hover: hover) and (pointer: fine) {
+  #sideMenu::after {
+    content: none !important;
+    display: none !important;
+  }
+}
