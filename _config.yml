@@ -1,0 +1,6 @@
+# Konfiguracja Jekylla dla knhmi.pl
+# Wydarzenia są w folderze _wydarzenia (edytowane przez Pages CMS).
+# output: false – wydarzenia nie dostają osobnych podstron, pokazują się tylko na Wydarzenia.html
+collections:
+  wydarzenia:
+    output: false
