@@ -1,0 +1,51 @@
+name: Tłumaczenie wydarzeń PL → EN
+
+on:
+  push:
+    paths:
+      - "_wydarzenia/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: tlumaczenie
+  cancel-in-progress: false
+
+jobs:
+  tlumacz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml
+
+      - name: Tłumaczenie pustych pól EN
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: python scripts/tlumacz.py
+
+      - name: Zapis tłumaczeń do repozytorium
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then
+            echo "Brak nowych tłumaczeń."
+            exit 0
+          fi
+          git config user.name "tlumacz-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _wydarzenia
+          git commit -m "Automatyczne tłumaczenie wydarzeń na angielski"
+          git pull --rebase
+          git push
+          # odświeżenie strony na GitHub Pages
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

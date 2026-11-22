@@ -15,12 +15,12 @@ content:
         order: desc
     fields:
       - { name: title, label: Tytuł (PL), type: string, required: true }
-      - { name: title_en, label: Tytuł (EN), type: string }
+      - { name: title_en, label: "Tytuł (EN) – zostaw puste, przetłumaczy się samo", type: string }
       - { name: date, label: Data, type: date, required: true }
       - { name: date_end, label: Data zakończenia (tylko dla wydarzeń kilkudniowych), type: date }
       - { name: image, label: Zdjęcie, type: image }
       - { name: text, label: Opis (PL), type: text }
-      - { name: text_en, label: Opis (EN), type: text }
+      - { name: text_en, label: "Opis (EN) – zostaw puste, przetłumaczy się samo", type: text }
       - { name: link, label: Link do posta lub wideo, type: string }
       - name: link_label
         label: Rodzaj przycisku

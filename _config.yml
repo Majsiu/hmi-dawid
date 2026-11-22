@@ -4,3 +4,11 @@
 collections:
   wydarzenia:
     output: false
+
+# Pliki pomocnicze, które nie mają trafić na stronę
+exclude:
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
