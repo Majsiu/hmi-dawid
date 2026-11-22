@@ -92,7 +92,7 @@
 <article class="news-item">
 {%- if e.image %}
 <div class="news-image">
-<img alt="{{ e.title | escape }}" decoding="async" fetchpriority="low" loading="lazy" src="{{ e.image }}"/>
+<img alt="{{ e.title | escape }}" decoding="async" fetchpriority="low" loading="lazy" src="{{ e.image | remove_first: '/' }}"/>
 </div>
 {%- endif %}
 <div class="news-content">
